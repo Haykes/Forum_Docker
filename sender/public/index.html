@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Forum Docker - Sender</title>
+</head>
+<body>
+<div class="container">
+    <div class="message-input-column">
+        <!-- Formulaire pour saisir le pseudo -->
+        <div id="pseudoContainer">
+            <label for="pseudo">Pseudo :</label>
+            <input type="text" id="pseudo" placeholder="Entrez votre pseudo">
+            <button id="startButton">Commencer</button>
+        </div>
+        <!-- Formulaire pour écrire et envoyer un message -->
+        <div id="messageContentContainer">
+            <h3>Écrire un message</h3>
+            <textarea id="messageContent" placeholder="Écrivez votre message ici"></textarea>
+            <button id="sendMessageButton">Envoyer</button>
+        </div>
+    </div>
+    <div class="message-display-column">
+        <!-- Zone d'affichage des messages -->
+        <div id="messageListContainer">
+            <h2>Messages</h2>
+            <ul id="messageList"></ul>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>

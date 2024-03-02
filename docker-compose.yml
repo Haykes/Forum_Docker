@@ -1,0 +1,52 @@
+version: '3.8'
+
+networks:
+  mynetwork:
+    driver: overlay
+
+services:
+  db:
+    image: mysql:5.7
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Teamo753jhkijh104
+      MYSQL_DATABASE: forum_docker
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./init-db:/docker-entrypoint-initdb.d
+#    networks:
+#      - mynetwork
+
+  thread:
+    image: haykes/thread:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+    environment:
+      PORT: 3000
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: Teamo753jhkijh104
+      DB_NAME: forum_docker
+#    networks:
+#      - mynetwork
+
+  sender:
+    image: haykes/sender:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      PORT: 3000
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: Teamo753jhkijh104
+      DB_NAME: forum_docker
+#    networks:
+#      - mynetwork
+
+volumes:
+  db-data:
