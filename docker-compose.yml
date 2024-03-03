@@ -15,8 +15,8 @@ services:
     volumes:
       - db-data:/var/lib/mysql
       - ./init-db:/docker-entrypoint-initdb.d
-#    networks:
-#      - mynetwork
+    networks:
+      - mynetwork
 
   thread:
     image: haykes/thread:latest
@@ -30,8 +30,8 @@ services:
       DB_USER: root
       DB_PASSWORD: jhkijh104
       DB_NAME: forum_docker
-#    networks:
-#      - mynetwork
+    networks:
+      - mynetwork
 
   sender:
     image: haykes/sender:latest
@@ -45,8 +45,8 @@ services:
       DB_USER: root
       DB_PASSWORD: jhkijh104
       DB_NAME: forum_docker
-#    networks:
-#      - mynetwork
+    networks:
+      - mynetwork
 
 volumes:
   db-data:
