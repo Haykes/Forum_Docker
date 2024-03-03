@@ -18,10 +18,14 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+      - name: Transfer docker-compose.yml to EC2
+        run: |
+          scp -o StrictHostKeyChecking=no ./docker-compose.yml ec2-user@ec2-35-180-61-119.eu-west-3.compute.amazonaws.com:~/
+
       - name: Deploy to Docker Swarm Manager
         run: |
           ssh -o StrictHostKeyChecking=no ec2-user@ec2-35-180-61-119.eu-west-3.compute.amazonaws.com '
-            docker stack deploy --compose-file docker-compose.yml forumsebastiengosselin
+            docker stack deploy --compose-file ~/docker-compose.yml forumsebastiengosselin
           '
 
       - name: Verify deployment
