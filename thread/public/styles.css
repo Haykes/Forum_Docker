@@ -1,4 +1,3 @@
-/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
@@ -14,35 +13,31 @@ html, body {
 body {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align to the top */
+    align-items: flex-start;
     padding: 20px;
 }
 
 .container {
     display: flex;
-    gap: 20px; /* This creates space between the two columns */
-    max-width: 1200px; /* Adjust as needed */
+    gap: 20px;
+    max-width: 1200px;
     width: 100%;
-    margin-top: 20px; /* Add some space from the top */
+    margin-top: 20px;
 }
-
-/* Column for the message input */
 .message-input-column {
-    flex: 1; /* Take up half the space */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to the left */
+    align-items: flex-start;
 }
 
-/* Column for displaying messages */
 .message-display-column {
-    flex: 1; /* Take up half the space */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to the left */
+    align-items: flex-start;
 }
 
-/* Style the input fields and buttons */
 input[type=text],
 textarea,
 button {
@@ -57,12 +52,10 @@ button {
     cursor: pointer;
 }
 
-/* Style the message list container */
 #messageListContainer {
     background-color: #ffffff;
-    border-radius: 10px;
     padding: 20px;
-    width: 100%; /* Full width of its column */
+    width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -72,29 +65,26 @@ button {
 
 /* Style for each message */
 #messageList li {
-    background-color: #a084eb;
+    background-color: cornflowerblue;
     color: white;
     padding: 10px 15px;
-    border-radius: 20px;
     margin-bottom: 10px;
-    max-width: 100%; /* Full width of its container */
+    max-width: 100%;
     word-wrap: break-word;
 }
 
-/* Style the message content container */
 #messageContentContainer {
-    width: 100%; /* Full width of its column */
+    width: 100%;
 }
 
 #messageContent {
-    width: 100%; /* Full width of its container */
-    height: 100px; /* Adjust the height as needed */
+    width: 100%;
+    height: 100px;
     border-radius: 5px;
     border: 1px solid #ddd;
     resize: vertical;
 }
 
-/* Add some spacing to the label */
 label {
     display: block;
     margin-bottom: 5px;
