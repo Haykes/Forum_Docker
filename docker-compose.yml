@@ -14,7 +14,6 @@ services:
       MYSQL_DATABASE: forum_docker
     volumes:
       - db-data:/var/lib/mysql
-      - ./init-db:/docker-entrypoint-initdb.d
     networks:
       - mynetwork
 
